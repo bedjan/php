@@ -33,7 +33,7 @@ if($_POST) {     //odeslání formuláře
 }
 ?>
 
-    <h4>Kalkulačka | +,-,*,/</h4>
+   <!-- <h4>Kalkulačka | +,-,*,/</h4> -->
     <form method="post" action="#">
       </label><input type="number" name="cisA" maxlength="4" value="<?php if(isset($_POST['cisA'])) : echo $_POST['cisA']; endif; ?>" />
       <select name="operace">
