@@ -47,7 +47,6 @@ fclose($file);
 
 <h3><a href="?delete=1" href="javascript:history.go(0)#section">POZOR maže data/poznamky.md</a></h3>
 <a href="http://bednar.eu5.org/data/poznamky.md" target="_blank">Náhled na data/poznamky.md </a>
-<h3><a href="http://bednar.eu5.org" href="http://www.seznam.cz#section">POZOR</a></h3>
 
 <?php
     if(isset($_GET['delete']))
