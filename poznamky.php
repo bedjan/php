@@ -45,7 +45,7 @@ fclose($file);
 
 </form>
 
-<h3><a href="?delete=1" href="javascript:history.go(0)#section">POZOR maže data/poznamky.md</a></h3>
+
 <h3><a href="?delete=1" href="javascript:history.go(0)index.php#section" >POZOR maže data/poznamky.md</a></h3>
 
 <?php
