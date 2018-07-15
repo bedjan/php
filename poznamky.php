@@ -9,17 +9,18 @@
 </head>
 
 <!-- 
-<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
-
+<script src="ckeditor/ckeditor.js"></script>
 -->
  
 <body>
 
-<div class="w3-container w3-white w3-text-black">
 
 
 <br>
+
+<div class="w3-container w3-white w3-text-black">
+
+
 
 <?php 
 
@@ -46,14 +47,16 @@ fclose($file);
 </form>
 
 
-<h3><a href="?delete=1" href="javascript:history.go(0)index.php#section" >POZOR maže data/poznamky.md</a></h3>
+<a href="poznamky.php?delete=1" onclick="location.href='poznamky.php';" target="_blank">POZOR smaže poznamky.md</a>
 
 <?php
     if(isset($_GET['delete']))
     {
         unlink("data/poznamky.md");
+        require_once("poznamky.php");
     }
 ?>
+
 
 
 <br>
@@ -94,7 +97,6 @@ foreach($files as $files)
 echo $files;
 }
 ?>
-
 
 
 
