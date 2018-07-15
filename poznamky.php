@@ -41,12 +41,12 @@ fclose($file);
 <form action="<?=$PHP_SELF?>" method="post"> 
 <textarea Name="update" cols="30" rows="5"><?=$text?></textarea><br/> 
 
-<input type="submit" value="ULOZIT"/> 
+<input type="submit" value="ULOŽIT"/> 
 
 </form>
 
 <h3><a href="?delete=1" href="javascript:history.go(0)#section">POZOR maže data/poznamky.md</a></h3>
-<a href="http://bednar.eu5.org/data/poznamky.md" target="_blank">Náhled na data/poznamky.md </a>
+<h3><a href="?delete=1" href="javascript:history.go(0)index.php#section" >POZOR maže data/poznamky.md</a></h3>
 
 <?php
     if(isset($_GET['delete']))
@@ -56,15 +56,15 @@ fclose($file);
 ?>
 
 
-
-<form enctype="multipart/form-data" action="zk.php" method="POST">
+<br>
+<hr>
+<form enctype="multipart/form-data" action="poznamky.php" method="POST">
     <h3>Vyber soubor a nahrej do adresáře data</h3>
     <input type="file" name="uploaded_file"></input><br />
     <input type="submit" value="nahrát"></input>
   </form>
-</body>
-</html>
-<?PHP
+
+<?php
   if(!empty($_FILES['uploaded_file']))
   {
     $path = "data/";
@@ -73,10 +73,29 @@ fclose($file);
       echo "Soubor > ".  basename( $_FILES['uploaded_file']['name']). 
       " < byl nahrán";
     } else{
-        echo "There was an error uploading the file, please try again!";
+        echo "Nenahráno,vyber soubor a zkus znovu!";
     }
   }
 ?>
+
+<br>
+<hr>
+<h3>Výpis souborů adresáře data</h3>
+<?php
+//path to directory to scan
+$directory = "./data/";
+ 
+//get all image files with a .jpg extension.
+$files = glob($directory . "*.*");
+ 
+//print each file name
+foreach($files as $files)
+{
+echo $files;
+}
+?>
+
+
 
 
 
